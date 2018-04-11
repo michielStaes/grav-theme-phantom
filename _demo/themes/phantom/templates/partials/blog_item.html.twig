@@ -1,0 +1,19 @@
+{% if child.header.style == "random" %}
+    {% set class ='style'~ random([1,2,3,4,5,6]) %}
+{% else %}
+    {% set class = 'style'~child.header.style  %}
+{% endif %}
+
+<article class="{{ class }}">
+    <span class="image">
+        <img src="{{ url(child.url ~'/' ~  child.header.image) }}" alt=""/>
+    </span>
+    <a href="{{ child.url }}">
+        <h2>Magna</h2>
+        <div class="content">
+            <p>{{ child.title }}</p>
+        </div>
+    </a>
+</article>
+
+

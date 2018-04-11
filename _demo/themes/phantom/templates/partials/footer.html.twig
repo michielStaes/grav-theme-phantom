@@ -1,0 +1,17 @@
+<footer id="footer">
+    <div class="inner">
+        <section>
+            {{ content() }}
+            {% include "forms/form.html.twig" %}
+        </section>
+        <section>
+            <h2>Follow</h2>
+            <ul class="icons">
+                {% set links = page.header.links %}
+                {% for link in links%}
+                    <li><a href="{{ link.url }}" class="icon style2 fa-{{ link.name }}"><span class="label">Twitter</span></a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</footer>

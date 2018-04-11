@@ -13,9 +13,9 @@ Based on the responsive [Phantom template ](https://html5up.net/phantom)
 * generic view template `generic.md`
 
 ### default.md instructions  
-Default.md is intended to be your landing page.
+default.md is intended to be your landing page.
 
-Default.md YAML header cheatcheat:
+default.md YAML header cheatcheat:
 
 | YAML 			 |REQUIRED		| INFO
 |----------------|--------------|--------------|
@@ -147,3 +147,26 @@ Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi e
 
 ```
 </details>
+
+
+.
+
+### folder structure  
+
+> intended pages structure
+
+    .
+    ├── pages                   
+          ├── 01.home                    
+                ├── default.md
+                ├── 01.blog    
+                        ├── generic.md    
+                        ├── pic.jpg    
+
+
+                
+    
+
+
+
+  

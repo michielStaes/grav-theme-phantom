@@ -15,6 +15,17 @@ Based on the responsive [Phantom template ](https://html5up.net/phantom)
 ### Default.md instructions  
 Default.md is intended to be your landing page.
 
+Default.md YAML header cheatcheat:
+
+| YAML 			 |REQUIRED|
+|----------------|--------------------------|
+|title			 |required    
+|content		 |required  
+|links			 |not required           
+|body_classes	 |not required
+|form			 |not required
+
+
 
 
 

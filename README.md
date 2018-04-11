@@ -17,14 +17,13 @@ Default.md is intended to be your landing page.
 
 Default.md YAML header cheatcheat:
 
-| YAML 			 |REQUIRED|
-|----------------|--------------------------|
-|title			 |required    
-|content		 |required  
-|links			 |not required           
-|body_classes	 |not required
-|form			 |not required
-
+| YAML 			 |REQUIRED		| INFO
+|----------------|--------------|--------------|
+|title			 |required      |Page title. Also represented in the menu.
+|content		 |required      | Your page content
+|links			 |not required  |Used to add following links in the footer. The link name has to be a font-awesome recognized icon. 
+|body_classes	 |not required|These classes will be added to the body tag. Incase you want to override the template.
+|form			 |not required| Will render the form in the footer
 
 
 

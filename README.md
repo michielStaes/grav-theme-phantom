@@ -12,7 +12,7 @@ Based on the responsive [Phantom template ](https://html5up.net/phantom)
 * Error view template `error.md`
 * generic view template `generic.md`
 
-### Default.md instructions  
+### default.md instructions  
 Default.md is intended to be your landing page.
 
 Default.md YAML header cheatcheat:
@@ -20,7 +20,7 @@ Default.md YAML header cheatcheat:
 | YAML 			 |REQUIRED		| INFO
 |----------------|--------------|--------------|
 |title			 |required      |Page title. Also represented in the menu.
-|content		 |required      | Your page content
+|content		 |required      |Used to load your tiles. (generic pages)
 |links			 |not required  |Used to add following links in the footer. The link name has to be a font-awesome recognized icon. 
 |body_classes	 |not required|These classes will be added to the body tag. Incase you want to override the template.
 |form			 |not required| Will render the form in the footer
@@ -31,8 +31,8 @@ Default.md YAML header cheatcheat:
 
 
 
-<details><summary>example</summary>
-<p>
+<details><summary>default.md example</summary>
+
 
 
 ```python
@@ -111,3 +111,39 @@ form:
 Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.
 
 ```
+</details>
+
+
+## generic.md instructions
+
+generic.md is intended to be used as a information/blog page. Clicking a tile on the default page will open the generic page.  
+generic.md  YAML header cheatcheat:
+
+| YAML 			 |REQUIRED		| INFO
+|----------------|--------------|--------------|
+|title			 |required      | Page title. Also represented in the menu.
+|image			 |required      | The name of the image. This image will be used in the homepage as a tile.
+|style|required  |The style should either be a number between 0 and 6, or the 'random' string. Depending on the number a different colour of tile will be generated in the default page. Random will generate a random colour.  
+
+<details><summary>generic.md example</summary>
+
+
+
+```python
+---
+title: blogpost1
+image: pic.jpg 
+style: 1
+
+
+---
+
+# This is Phantom, a free, fully responsive site </br> template designed by <a href="http://html5up.net">HTML5 UP</a>.
+
+
+Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.
+
+
+
+```
+</details>

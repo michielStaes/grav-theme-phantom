@@ -7,12 +7,18 @@ Based on the responsive [Phantom template ](https://html5up.net/phantom)
 
 
 
-### Supported Page Templates
+
+## supported page templates
+
+
 * Default view template `default.md`
 * Error view template `error.md`
 * generic view template `generic.md`
 
-### default.md instructions  
+
+## default.md instructions
+
+
 default.md is intended to be your landing page.
 
 default.md YAML header cheatcheat:
@@ -149,9 +155,12 @@ Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi e
 </details>
 
 
-.
 
-### folder structure  
+
+
+## folder structure
+
+
 
 > intended pages structure
 
@@ -166,6 +175,16 @@ Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi e
 
                 
     
+
+## contributions
+
+I've build this theme because I wanted to get familiar with the Grav CMS.  
+
+CONTRIBUTIONS ARE WELCOME HERE!  
+
+Any contributions in the form of criticism / feedback / bugreports /pull requests/ etc. are welcome.
+
+
 
 
 

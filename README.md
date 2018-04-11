@@ -173,8 +173,13 @@ Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi e
                         ├── pic.jpg    
 
 
-                
-    
+
+
+## Installation
+
+As it stands the best way to install this theme in your [Grav CMS](http://github.com/getgrav/grav) application is to:
+* pull this repository.
+* paste the clone into your user/themes folder.
 
 ## contributions
 

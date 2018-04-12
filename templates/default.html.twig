@@ -2,10 +2,9 @@
     {% set collection = page.collection() %}
     {% block content %}
         {{ page.content }}
-
         <section class="tiles">
             {% for child in collection %}
-               {% include 'partials/blog_item.html.twig' with {'page':child} %}
+                {% include 'partials/blog_item.html.twig' with {'page':child} %}
             {% endfor %}
         </section>
     {% endblock %}

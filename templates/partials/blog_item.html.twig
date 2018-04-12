@@ -1,12 +1,11 @@
-{% if child.header.style == "random" %}
-    {% set class ='style'~ random([1,2,3,4,5,6]) %}
-{% else %}
-    {% set class = 'style'~child.header.style  %}
-{% endif %}
 
-<article class="{{ class }}">
+{% set tile_class = 'style'~child.header.content.style  %}
+{% set img_path = child.header.content.img|first.name %}
+
+
+<article class="{{ tile_class}}">
     <span class="image">
-        <img src="{{ url(child.url ~'/' ~  child.header.image) }}" alt=""/>
+        <img src="{{ url(child.url ~'/' ~  img_path) }}" alt=""/>
     </span>
     <a href="{{ child.url }}">
         <h2>Magna</h2>

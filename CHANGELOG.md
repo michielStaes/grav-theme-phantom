@@ -5,3 +5,5 @@
     * Phantom theme initialisation    
 2. [](#bugfix)
      * Bugfix dropdown in Menu always has to be enabled
+2. [](#update)
+     * Added page blueprints

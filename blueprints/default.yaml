@@ -1,0 +1,48 @@
+title: Default
+
+'@extends':
+    type: default
+    context: blueprints://pages
+
+title: Default
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+
+        home_page:
+          type: tab
+          title: Home page settings
+          fields:
+            header.footer.links:
+               type: array
+               label: 'Follow links'
+#               help: PLUGIN_ADMIN.METADATA_HELP
+               placeholder_key: 'fa-github'
+               placeholder_value: 'https://github.com/michielStaes'
+               required: false
+
+            header.footer.form_action:
+                type: text
+                label: Contact form route
+                default: '#'
+                required: false
+
+            header.footer.form_enabled:
+                type: toggle
+                label: Contact form
+                highlight: 1
+                default: 1
+                options:
+                  0: PLUGIN_ADMIN.DISABLED
+                  1: PLUGIN_ADMIN.ENABLED
+                validate:
+                  type: bool
+
+
+
+
+
+

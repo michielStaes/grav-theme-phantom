@@ -1,0 +1,49 @@
+title: Generic
+'@extends':
+    type: default
+    context: blueprints://pages
+
+title: Default
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        advanced:
+          fields:
+            overrides:
+              fields:
+                header.child_type:
+                  default: item
+        blog:
+          type: tab
+          title: Generic page settings
+
+          fields:
+            header.content.style:
+              type: range
+              label: Tile style (1-6)
+              default: 1
+              validate:
+                required: true
+                type: int
+                min: 1
+                max: 6
+
+            header.content.img:
+              type: file
+              random_name: false
+              label: picture
+              destination: 'self@'
+              limit: 1
+              required: true
+              accept:
+                - image/*
+
+
+
+
+
+

@@ -1,48 +1,246 @@
-title: Default
+#title: Default
+#
+#
+#
+#title: Default
+#form:
+#  fields:
+#    tabs:
+#      type: tabs
+#      active: 1
+#      fields:
+#
+#        home_page:
+#          type: tab
+#          title: Home page settings
+#          fields:
+#            header.footer.links:
+#               type: array
+#               label: 'Follow links'
+##               help: PLUGIN_ADMIN.METADATA_HELP
+#               placeholder_key: 'fa-github'
+#               placeholder_value: 'https://github.com/michielStaes'
+#               required: false
+#
+#            header.footer.form_action:
+#                type: text
+#                label: Contact form route
+#                default: '#'
+#                required: false
+#
+#            header.footer.form_enabled:
+#                type: toggle
+#                label: Contact form
+#                highlight: 1
+#                default: 1
+#                options:
+#                  0: PLUGIN_ADMIN.DISABLED
+#                  1: PLUGIN_ADMIN.ENABLED
+#                validate:
+#                  type: bool
+#
+#
+#
+#
+#
+#
 
-'@extends':
-    type: default
-    context: blueprints://pages
+title: PLUGIN_ADMIN.DEFAULT
 
-title: Default
+rules:
+  slug:
+    pattern: '[a-zA-Z?-?A-?0-9_\-]+'
+    min: 1
+    max: 200
+
 form:
+  validation: loose
+
   fields:
+
     tabs:
       type: tabs
       active: 1
+
       fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+
+          fields:
+            header.title:
+              type: text
+              autofocus: true
+              style: vertical
+              label: PLUGIN_ADMIN.TITLE
+
+            content:
+                type: markdown
+                validate:
+                  type: textarea
+
+            header.media_order:
+              type: pagemedia
+              label: PLUGIN_ADMIN.PAGE_MEDIA
+
+        options:
+          type: tab
+          title: PLUGIN_ADMIN.OPTIONS
+
+          fields:
+
+            publishing:
+              type: section
+              title: PLUGIN_ADMIN.PUBLISHING
+              underline: true
+
+              fields:
+                header.published:
+                  type: toggle
+                  toggleable: true
+                  label: PLUGIN_ADMIN.PUBLISHED
+                  help: PLUGIN_ADMIN.PUBLISHED_HELP
+                  highlight: 1
+                  size: medium
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
+
+                header.date:
+                  type: datetime
+                  label: PLUGIN_ADMIN.DATE
+                  toggleable: true
+                  help: PLUGIN_ADMIN.DATE_HELP
+
+                header.publish_date:
+                  type: datetime
+                  label: PLUGIN_ADMIN.PUBLISHED_DATE
+                  toggleable: true
+                  help: PLUGIN_ADMIN.PUBLISHED_DATE_HELP
+
+                header.unpublish_date:
+                  type: datetime
+                  label: PLUGIN_ADMIN.UNPUBLISHED_DATE
+                  toggleable: true
+                  help: PLUGIN_ADMIN.UNPUBLISHED_DATE_HELP
+
+                header.metadata:
+                  toggleable: true
+                  type: array
+                  label: PLUGIN_ADMIN.METADATA
+                  help: PLUGIN_ADMIN.METADATA_HELP
+                  placeholder_key: PLUGIN_ADMIN.METADATA_KEY
+                  placeholder_value: PLUGIN_ADMIN.METADATA_VALUE
+
+            taxonomies:
+              type: section
+              title: PLUGIN_ADMIN.TAXONOMIES
+              underline: true
+
+              fields:
+                header.taxonomy:
+                  type: taxonomy
+                  label: PLUGIN_ADMIN.TAXONOMY
+                  multiple: true
+                  validate:
+                    type: array
+
+        advanced:
+          type: tab
+          title: PLUGIN_ADMIN.ADVANCED
+
+          fields:
+            columns:
+              type: columns
+              fields:
+                column1:
+                  type: column
+                  fields:
+
+                    settings:
+                      type: section
+                      title: PLUGIN_ADMIN.SETTINGS
+                      underline: true
+
+                    folder:
+                      type: text
+                      label: PLUGIN_ADMIN.FOLDER_NAME
+                      validate:
+                        rule: slug
+
+                    route:
+                      type: parents
+                      label: PLUGIN_ADMIN.PARENT
+                      classes: fancy
+
+                    name:
+                      type: select
+                      classes: fancy
+                      label: PLUGIN_ADMIN.PAGE_FILE
+                      help: PLUGIN_ADMIN.PAGE_FILE_HELP
+                      default: default
+                      data-options@: '\Grav\Common\Page\Pages::pageTypes'
+
+                    header.body_classes:
+                      type: text
+                      label: PLUGIN_ADMIN.BODY_CLASSES
+
+
+
+
+
+
+            routes_only:
+              type: section
+              title: PLUGIN_ADMIN.ROUTE_OVERRIDES
+              underline: true
+
+              fields:
+
+                header.routes.default:
+                  type: text
+                  toggleable: true
+                  label: PLUGIN_ADMIN.ROUTE_DEFAULT
+
+                header.routes.canonical:
+                  type: text
+                  toggleable: true
+                  label: PLUGIN_ADMIN.ROUTE_CANONICAL
+
+                header.routes.aliases:
+                  type: array
+                  toggleable: true
+                  value_only: true
+                  size: large
+                  label: PLUGIN_ADMIN.ROUTE_ALIASES
+
 
         home_page:
-          type: tab
-          title: Home page settings
-          fields:
-            header.footer.links:
-               type: array
-               label: 'Follow links'
-#               help: PLUGIN_ADMIN.METADATA_HELP
-               placeholder_key: 'fa-github'
-               placeholder_value: 'https://github.com/michielStaes'
-               required: false
+                  type: tab
+                  title: Home page settings
+                  fields:
+                    header.footer.links:
+                       type: array
+                       label: 'Follow links'
+                       placeholder_key: 'fa-github'
+                       placeholder_value: 'https://github.com/michielStaes'
+                       required: false
 
-            header.footer.form_action:
-                type: text
-                label: Contact form route
-                default: '#'
-                required: false
+                    header.footer.form_action:
+                        type: text
+                        label: Contact form route
+                        default: '#'
+                        required: false
 
-            header.footer.form_enabled:
-                type: toggle
-                label: Contact form
-                highlight: 1
-                default: 1
-                options:
-                  0: PLUGIN_ADMIN.DISABLED
-                  1: PLUGIN_ADMIN.ENABLED
-                validate:
-                  type: bool
-
-
-
-
-
-
+                    header.footer.form_enabled:
+                        type: toggle
+                        label: Contact form
+                        highlight: 1
+                        default: 1
+                        options:
+                          0: PLUGIN_ADMIN.DISABLED
+                          1: PLUGIN_ADMIN.ENABLED
+                        validate:
+                          type: bool

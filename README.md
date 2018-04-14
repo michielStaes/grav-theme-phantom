@@ -89,8 +89,8 @@ form:
 
 ## Instructions generic.md 
 
-generic.md is intended to be used as a information/blog page. Clicking a tile on the default page will open the generic page.  
-generic.md  Make sure you add a picture when you add a generic page, as this picture will be used as a tile on the home page.
+generic.md is intended to be used as a information/blog page. Clicking a tile on the default page will open the generic page.   
+Make sure you add a picture when you add a generic page, as this picture will be used as a tile on the home page.
 
 
 
@@ -118,7 +118,7 @@ I am a  blog post.
 </details>
 
 
-.
+
 
 ### Folder structure  
 

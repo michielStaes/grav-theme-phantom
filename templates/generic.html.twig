@@ -1,6 +1,13 @@
 {% embed 'partials/base.html.twig' %}
     {% set collection = page.collection() %}
     {% block content %}
+        <h1>{{ page.title }}</h1>
+        {% if page.header.content.show_img  %}
+        <span class="image main">
+        {% set img_path = page.header.content.img|first.name %}
+            <img src="{{ url(page.url ~'/' ~  img_path) }}" alt=""/>
+        </span>
+        {% endif %}
         {{ page.content }}
     {% endblock %}
 {% endembed %}

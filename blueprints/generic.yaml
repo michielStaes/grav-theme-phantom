@@ -273,6 +273,7 @@ form:
 
                   fields:
 
+
                     header.content.img:
                       type: file
                       random_name: false
@@ -282,3 +283,15 @@ form:
                       required: true
                       accept:
                         - image/*
+
+
+                    header.content.show_img:
+                        type: toggle
+                        label: Image on page
+                        highlight: 1
+                        default: 0
+                        options:
+                          1: PLUGIN_ADMIN.ENABLED
+                          0: PLUGIN_ADMIN.DISABLED
+                        validate:
+                          type: bool

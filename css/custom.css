@@ -1,3 +1,10 @@
 button{
     margin-top: 1em;
 }
+
+.notices{
+    font-family: "Courier New", monospace;
+    width: 50%;
+    position: absolute;
+    top:0;
+}

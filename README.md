@@ -7,7 +7,8 @@ Based on the responsive [Phantom template ](https://html5up.net/phantom)
 ![Antimatter](screenshot.jpg)
 
 ### Installation
-Currently the fastest way to install this themplate is by cloning it and placing it in your grav/user/themes folder
+Currently the fastest way to install this themplate is by cloning it and placing it in your grav/user/themes folder.
+You could also download it at https://github.com/michielStaes/grav-theme-phantom/releases
 
 
 

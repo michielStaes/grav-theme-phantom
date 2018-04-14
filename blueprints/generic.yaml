@@ -272,15 +272,6 @@ form:
                   title: Generic page settings
 
                   fields:
-                    header.content.style:
-                      type: range
-                      label: Tile style (1-6)
-                      default: 1
-                      validate:
-                        required: true
-                        type: int
-                        min: 1
-                        max: 6
 
                     header.content.img:
                       type: file

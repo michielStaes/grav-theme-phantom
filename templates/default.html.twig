@@ -3,8 +3,13 @@
     {% block content %}
         {{ page.content }}
         <section class="tiles">
+            {% set tileCounter = 1 %}
             {% for child in collection %}
+                {% set tile_class, tileCounter = 'style'~tileCounter, tileCounter +1 %}
                 {% include 'partials/blog_item.html.twig' with {'page':child} %}
+                {% if tileCounter > 6 %}
+                    {% set tileCounter = 1 %}
+                {% endif %}
             {% endfor %}
         </section>
     {% endblock %}

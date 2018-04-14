@@ -1,57 +1,3 @@
-#'@extends':
-#    type: default
-#    context: blueprints://pages
-
-##title: Default
-##
-##
-##
-##title: Default
-##form:
-##  fields:
-##    tabs:
-##      type: tabs
-##      active: 1
-##      fields:
-##
-##        home_page:
-##          type: tab
-##          title: Home page settings
-##          fields:
-##            header.footer.links:
-##               type: array
-##               label: 'Follow links'
-###               help: PLUGIN_ADMIN.METADATA_HELP
-##               placeholder_key: 'fa-github'
-##               placeholder_value: 'https://github.com/michielStaes'
-##               required: false
-##
-##            header.footer.form_action:
-##                type: text
-##                label: Contact form route
-##                default: '#'
-##                required: false
-##
-##            header.footer.form_enabled:
-##                type: toggle
-##                label: Contact form
-##                highlight: 1
-##                default: 1
-##                options:
-##                  0: PLUGIN_ADMIN.DISABLED
-##                  1: PLUGIN_ADMIN.ENABLED
-##                validate:
-##                  type: bool
-##
-##
-##
-##
-##
-#
-#
-#
-###WORKING?
-##
 title: PLUGIN_ADMIN.DEFAULT
 
 rules:
@@ -62,13 +8,10 @@ rules:
 
 form:
   validation: loose
-
   fields:
-
     tabs:
       type: tabs
       active: 1
-
       fields:
         content:
           type: tab
@@ -95,12 +38,10 @@ form:
           title: PLUGIN_ADMIN.OPTIONS
 
           fields:
-
             publishing:
               type: section
               title: PLUGIN_ADMIN.PUBLISHING
               underline: true
-
               fields:
                 header.published:
                   type: toggle
@@ -157,7 +98,6 @@ form:
         advanced:
           type: tab
           title: PLUGIN_ADMIN.ADVANCED
-
           fields:
             columns:
               type: columns

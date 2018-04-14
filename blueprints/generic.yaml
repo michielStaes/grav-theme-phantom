@@ -1,100 +1,3 @@
-#title: Generic
-#'@extends':
-#    type: default
-#    context: blueprints://pages
-#
-#title: Default
-#form:
-#  fields:
-#    tabs:
-#      type: tabs
-#      active: 1
-#
-#      fields:
-#        advanced:
-#          fields:
-#            overrides:
-#              fields:
-#                header.child_type:
-#                  default: item
-#        blog:
-#          type: tab
-#          title: Generic page settings
-#
-#          fields:
-#            header.content.style:
-#              type: range
-#              label: Tile style (1-6)
-#              default: 1
-#              validate:
-#                required: true
-#                type: int
-#                min: 1
-#                max: 6
-#
-#            header.content.img:
-#              type: file
-#              random_name: false
-#              label: picture
-#              destination: 'self@'
-#              limit: 1
-#              required: true
-#              accept:
-#                - image/*
-#
-#
-#
-#
-#
-#
-
-#title: Default
-#
-#
-#
-#title: Default
-#form:
-#  fields:
-#    tabs:
-#      type: tabs
-#      active: 1
-#      fields:
-#
-#        home_page:
-#          type: tab
-#          title: Home page settings
-#          fields:
-#            header.footer.links:
-#               type: array
-#               label: 'Follow links'
-##               help: PLUGIN_ADMIN.METADATA_HELP
-#               placeholder_key: 'fa-github'
-#               placeholder_value: 'https://github.com/michielStaes'
-#               required: false
-#
-#            header.footer.form_action:
-#                type: text
-#                label: Contact form route
-#                default: '#'
-#                required: false
-#
-#            header.footer.form_enabled:
-#                type: toggle
-#                label: Contact form
-#                highlight: 1
-#                default: 1
-#                options:
-#                  0: PLUGIN_ADMIN.DISABLED
-#                  1: PLUGIN_ADMIN.ENABLED
-#                validate:
-#                  type: bool
-#
-#
-#
-#
-#
-#
-
 title: PLUGIN_ADMIN.DEFAULT
 
 rules:
@@ -105,13 +8,10 @@ rules:
 
 form:
   validation: loose
-
   fields:
-
     tabs:
       type: tabs
       active: 1
-
       fields:
         content:
           type: tab
@@ -136,14 +36,12 @@ form:
         options:
           type: tab
           title: PLUGIN_ADMIN.OPTIONS
-
           fields:
 
             publishing:
               type: section
               title: PLUGIN_ADMIN.PUBLISHING
               underline: true
-
               fields:
                 header.published:
                   type: toggle
@@ -237,16 +135,10 @@ form:
                       type: text
                       label: PLUGIN_ADMIN.BODY_CLASSES
 
-
-
-
-
-
             routes_only:
               type: section
               title: PLUGIN_ADMIN.ROUTE_OVERRIDES
               underline: true
-
               fields:
 
                 header.routes.default:
@@ -266,13 +158,10 @@ form:
                   size: large
                   label: PLUGIN_ADMIN.ROUTE_ALIASES
 
-
         generic:
                   type: tab
                   title: Generic page settings
-
                   fields:
-
 
                     header.content.img:
                       type: file
@@ -283,7 +172,6 @@ form:
                       required: true
                       accept:
                         - image/*
-
 
                     header.content.show_img:
                         type: toggle

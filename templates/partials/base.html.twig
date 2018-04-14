@@ -34,7 +34,12 @@
     <header id="header">
         <div class="inner">
             <a href="{{ home_url }}" class="logo">
-                <span class="symbol"><img src="{{ url('theme://images/logo.svg') }}" alt=""/></span><span class="title">{{ page.title }}</span>
+                {% if page.header.content.custom_logo %}
+                   {% set img_path ='/'~page.slug~'/'~img_path ~page.header.content.custom_logo|first.name %}
+                {% else %}
+                    {% set img_path ='theme://images/logo.svg' %}
+                {% endif %}
+                <span class="symbol"><img src="{{ url(img_path) }}" alt=""/></span><span class="title">{{ page.title }}</span>
             </a>
             <nav>
                 <ul>

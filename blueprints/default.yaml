@@ -247,3 +247,17 @@ form:
                           1: PLUGIN_ADMIN.ENABLED
                         validate:
                           type: bool
+
+
+                    custom_logo:
+                        name: logo
+                        type: file
+                        label: Custom logo
+                        destination: '@self'
+                        limit: 1
+                        multiple: false
+                        autofocus: false
+                        accept:
+                        - image/*
+
+

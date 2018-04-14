@@ -33,10 +33,14 @@
 <div id="wrapper">
     <header id="header">
         <div class="inner">
-            <a href="index.html" class="logo">
-                <span class="symbol"><img src="{{ url('theme://images/logo.svg') }}" alt=""/></span><span class="title">Phantom</span>
+            <a href="{{ home_url }}" class="logo">
+                {% if page.header.content.custom_logo %}
+                   {% set img_path ='/'~page.slug~'/'~img_path ~page.header.content.custom_logo|first.name %}
+                {% else %}
+                    {% set img_path ='theme://images/logo.svg' %}
+                {% endif %}
+                <span class="symbol"><img src="{{ url(img_path) }}" alt=""/></span><span class="title">{{ page.title }}</span>
             </a>
-
             <nav>
                 <ul>
                     <li><a href="#menu">Menu</a></li>

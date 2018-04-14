@@ -1,3 +1,4 @@
+
 # Phantom Theme
 
 The **Phantom** [Grav CMS](http://github.com/getgrav/grav) Theme.  
@@ -15,103 +16,75 @@ Based on the responsive [Phantom template ](https://html5up.net/phantom)
 ### Instructions default.md   
 default.md is intended to be used as a landing/home page.
 
-default.md YAML header cheatcheat:
+#### How to setup a default page using the admin-panel:
 
-| YAML 			 |REQUIRED		| INFO
-|----------------|--------------|--------------|
-|title			 |required      |Page title. Also represented in the menu.
-|content		 |required      |Used to load your tiles. (generic pages)
-|links			 |not required  |Used to add following links in the footer. The link name has to be a font-awesome recognized icon. 
-|body_classes	 |not required|These classes will be added to the body tag. Incase you want to override the template.
-|form			 |not required| Will render the form in the footer
-
-
-
-
-
-
-
-<details><summary>default.md example</summary>
+ 1. Add a new page, select folowing options: ![default-create](https://user-images.githubusercontent.com/26135526/38764368-bb5ec562-3fad-11e8-9dee-c50d22249db2.JPG)
+ 
+ 2.![formatter](https://user-images.githubusercontent.com/26135526/38764445-66559918-3faf-11e8-8c79-ed04f896c9f0.JPG)
+ Open the expert tab and paste following headers into the Frontmatter: <details><summary>default.md headers</summary>
 
 
 
 ```python
----
 title: Home
-links:
-        -
-            name: twitter
-            url: twitter.com
-           
-        -
-            name: github
-            url: https://github.com/youraccount
-          
-        -
-            name: facebook
-            url: facebook.com
-            
-        -
-            name: instagram
-            url: instagram.com
-            
-        -
-            name: dribbble
-            url: dribble.com
-
-        -
-            name: 500px
-            url: url.com
-
-        -
-            name: phone
-            url: url.com
-        
-
-
-            
-body_classes: title-center title-h1h2
 content:
     items: '@self.children'
-    
-
 form:
-    action: /your-modular-page
-    name: my-nice-form
+    name: contact
     fields:
         -
             name: name
             label: Name
             placeholder: 'Enter your name'
-            autofocus: 'on'
             autocomplete: 'on'
             type: text
-            default: 
-               
+            validate:
+                required: true
         -
             name: email
             label: Email
-            placeholder: Enter your email address
+            placeholder: 'Enter your email address'
             type: email
             validate:
-            required: true
-
+                required: true
+        -
+            name: message
+            label: Message
+            placeholder: 'Enter your message'
+            type: textarea
+            validate:
+                required: true
     buttons:
         -
             type: submit
             value: Submit
-    
----
+        -
+            type: reset
+            value: Reset
+    process:
+        -
+            email:
+                subject: '[Site Contact Form] {{ form.value.name|e }}'
+                body: '{% include ''forms/data.html.twig'' %}'
+        -
+            save:
+                fileprefix: contact-
+                dateformat: Ymd-His-u
+                extension: txt
+                body: '{% include ''forms/data.txt.twig'' %}'
+        -
+            message: 'Thank you for getting in touch!'
 
-
-
-# This is Phantom, a free, fully responsive site </br> template designed by <a href="http://html5up.net">HTML5 UP</a>.
-
-
-Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.
 
 ```
 </details>
+
+
+
+  
+
+ 3. after saving, you can open the 'normal tab' and navigate to the 'home page settings tab'. To enable/disable extra features of the page. ![home-page-settings](https://user-images.githubusercontent.com/26135526/38764414-d7602804-3fae-11e8-8f35-99c153275b5e.JPG)
+
 
 
 ## Instructions generic.md 

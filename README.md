@@ -90,13 +90,9 @@ form:
 ## Instructions generic.md 
 
 generic.md is intended to be used as a information/blog page. Clicking a tile on the default page will open the generic page.  
-generic.md  YAML header cheatcheat:
+generic.md  Make sure you add a picture when you add a generic page, as this picture will be used as a tile on the home page.
 
-| YAML 			 |REQUIRED		| INFO
-|----------------|--------------|--------------|
-|title			 |required      | Page title. Also represented in the menu.
-|image			 |required      | The name of the image. This image will be used in the homepage as a tile.
-|style|required  |The style should either be a number between 0 and 6, or the 'random' string. Depending on the number a different colour of tile will be generated in the default page. Random will generate a random colour.  
+
 
 <details><summary>generic.md example</summary>
 
@@ -104,19 +100,19 @@ generic.md  YAML header cheatcheat:
 
 ```python
 ---
-title: blogpost1
-image: pic.jpg 
-style: 1
-
-
+title: 'blog page'
+content:
+    show_img: false
+    img:
+        user/pages/02.home/blog-page/pic.jpg:
+            name: pic.jpg
+            type: image/jpeg
+            size: 6311
+            path: user/pages/02.home/blog-page/pic.jpg
 ---
 
-# This is Phantom, a free, fully responsive site </br> template designed by <a href="http://html5up.net">HTML5 UP</a>.
-
-
-Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.
-
-
+Hello,
+I am a  blog post.
 
 ```
 </details>
